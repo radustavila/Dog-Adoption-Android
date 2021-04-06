@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/dogImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/SportsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/dogImage"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/name_placeholder" />
+
+        <TextView
+            android:id="@+id/gender"
+            style="@style/SportsDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogImage"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/gender_placeholder" />
+
+        <TextView
+            android:id="@+id/age"
+            style="@style/SportsDetailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dogImage"
+            android:layout_toEndOf="@id/gender"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/age_placeholder" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Dog Adoption App</string>
+    <string name="name_placeholder">Name</string>
+    <string name="gender_placeholder">Gender</string>
+    <string name="age_placeholder">Age</string>
+    <string name="age_text">%1$s years old</string>
+</resources>
