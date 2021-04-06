@@ -18,7 +18,7 @@ public class DogNetwork {
 
     private static final String TAG = "DOG_NETWORK";
 
-    public static List<Dog> getDogsList() {
+    public static void getDogsList(AFNCallback afnCallback) {
         List<Dog> dawgs = new ArrayList<>();
 
         AndroidNetworking
@@ -42,6 +42,8 @@ public class DogNetwork {
                                         dawg.getString("url")));
                             }
                             System.out.println(dawgs.size());
+
+                            afnCallback.onSuccess(dawgs);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -62,10 +64,10 @@ public class DogNetwork {
                             // error.getErrorDetail() : connectionError, parseError, requestCancelledError
                             Log.d(TAG, "onError errorDetail : " + error.getErrorDetail());
                         }
+                        afnCallback.onFailure(error.getErrorDetail());
                     }
                 });
         System.out.println(dawgs.size());
-        return dawgs;
     }
 
 }
