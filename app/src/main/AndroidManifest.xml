@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DogAdoptionApp">
-
-
+        <activity
+            android:name=".ui.DetailedDogActivity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity android:name=".ui.MainActivity" />
-
         <activity android:name=".ui.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

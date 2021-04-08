@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="SportsDetailText"
-        parent="TextAppearance.AppCompat.Subhead"/>
-    <style name="SportsTitle"
-        parent="TextAppearance.AppCompat.Headline"/>
+    <style name="Subtitle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:padding">@dimen/_8ssp</item>
+    </style>
 
-    <style name="SportsDetailTitle"
-        parent="TextAppearance.AppCompat.Headline"/>
+    <style name="DetailText"
+        parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:padding">@dimen/_8ssp</item>
+    </style>
+
+    <style name="Title"
+        parent="TextAppearance.AppCompat.Headline">
+        <item name="android:padding">@dimen/_8ssp</item>
+    </style>
+
 
 </resources>

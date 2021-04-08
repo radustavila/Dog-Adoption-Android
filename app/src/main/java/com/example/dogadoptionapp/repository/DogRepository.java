@@ -1,6 +1,5 @@
 package com.example.dogadoptionapp.repository;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.dogadoptionapp.model.Dog;
@@ -16,8 +15,14 @@ public class DogRepository {
 
     public DogRepository() {
         doggos = new MutableLiveData<>();
+    }
 
-        DogNetwork.getDogsList(new AFNCallback() {
+    public MutableLiveData<List<Dog>> getDoggos() {
+        return doggos;
+    }
+
+    public void getFilteredDoggos(String filter) {
+        DogNetwork.getDogsList(filter, new AFNCallback() {
             @Override
             public void onSuccess(Object result) {
                 doggos.setValue((List<Dog>) result);
@@ -28,9 +33,5 @@ public class DogRepository {
 
             }
         });
-    }
-
-    public LiveData<List<Dog>> getDoggos() {
-        return doggos;
     }
 }

@@ -18,7 +18,7 @@ public class DogNetwork {
 
     private static final String TAG = "DOG_NETWORK";
 
-    public static void getDogsList(AFNCallback afnCallback) {
+    public static void getDogsList(String filter, AFNCallback afnCallback) {
         List<Dog> dawgs = new ArrayList<>();
 
         AndroidNetworking
@@ -33,21 +33,23 @@ public class DogNetwork {
 
                             for (int i = 0; i < dogsArray.length(); i++) {
                                 JSONObject dawg = dogsArray.getJSONObject(i);
-                                dawgs.add(new Dog(dawg.getInt("id"),
+                                Dog dog = new Dog(dawg.getInt("id"),
                                         dawg.getString("name"),
                                         dawg.getString("gender"),
                                         dawg.getInt("age"),
                                         dawg.getString("description"),
                                         dawg.getString("breed"),
-                                        dawg.getString("url")));
-                            }
-                            System.out.println(dawgs.size());
+                                        dawg.getString("url"));
 
+                                if (dog.getBreed().contains(filter))
+                                    dawgs.add(dog);
+                                else if (filter.equals(""))
+                                    dawgs.add(dog);
+                            }
                             afnCallback.onSuccess(dawgs);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-
                     }
 
                     @Override
@@ -67,7 +69,6 @@ public class DogNetwork {
                         afnCallback.onFailure(error.getErrorDetail());
                     }
                 });
-        System.out.println(dawgs.size());
     }
 
 }

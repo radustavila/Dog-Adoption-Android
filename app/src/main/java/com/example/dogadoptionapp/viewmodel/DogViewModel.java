@@ -13,17 +13,22 @@ import java.util.List;
 
 public class DogViewModel extends AndroidViewModel {
 
-    private DogRepository dogRepository;
+    private final DogRepository dogRepository;
     private LiveData<List<Dog>> dogList;
 
     public DogViewModel(@NonNull Application application) {
         super(application);
 
         dogRepository = new DogRepository();
-        dogList = dogRepository.getDoggos();
+        dogRepository.getFilteredDoggos("");
     }
 
     public LiveData<List<Dog>> getDogList() {
+        dogList = dogRepository.getDoggos();
         return dogList;
+    }
+
+    public void setFilter(String filter) {
+        dogRepository.getFilteredDoggos(filter);
     }
 }

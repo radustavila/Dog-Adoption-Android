@@ -30,9 +30,12 @@ android {
 
 dependencies {
 
+    // Picasso
     implementation 'com.squareup.picasso:picasso-pollexor:2.71828'
 
+    // SDP & SSP components
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
 
     // Fast Android Networking components
     implementation 'com.amitshekhar.android:jackson-android-networking:1.0.2'

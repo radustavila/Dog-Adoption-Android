@@ -4,4 +4,11 @@
     <string name="gender_placeholder">Gender</string>
     <string name="age_placeholder">Age</string>
     <string name="age_text">%1$s years old</string>
+    <string name="description_placeholder">Description</string>
+    <string name="adopt_text">Adopt</string>
+    <string name="discard_adoption_text">Discard Adoption</string>
+    <string name="female_text">Female</string>
+    <string name="male_text">Male</string>
+    <string name="fa_icon_check">&#xf058;</string>
+    <string name="doggoimage_text">DoggoImage</string>
 </resources>
